@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Muhammad Talha — Dynamics 365 CRM &amp; Power Platform Developer</title>
+  <meta name="description" content="Muhammad Talha builds business applications, automates workflows and customizes CRM solutions with Microsoft Dynamics 365 and the Power Platform.">
+  <meta name="theme-color" content="#f4f2ff">
+  <meta property="og:title" content="Muhammad Talha — Dynamics 365 CRM & Power Platform Developer">
+  <meta property="og:description" content="Canvas and Model-driven apps, Power Automate, Dataverse, Power BI and Dynamics 365 customization.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- script.js is loaded in <head> on purpose: it adds the "js" class before first paint so reveal animations never flash. -->
+  <script src="script.js"></script>
+</head>
+<body>
+
+  <!-- ============ ICON SPRITE (reused everywhere through the SVG use element) ============ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11.5H3V9.75zm6.5 0h3.83v1.57h.05c.53-1 1.84-2.07 3.78-2.07 4.04 0 4.79 2.66 4.79 6.12v5.88h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75v5.29h-4V9.75z"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3.5 6.5h17v11h-17zM4 7l8 6.2L20 7"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/></symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m0 0-5-5m5 5-5 5"/></symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 19V5m0 0-5 5m5-5 5 5"/></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M9 9h10v11H9zM5 15V4h10"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21zM12 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/></symbol>
+      <symbol id="i-cap" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M2.5 9 12 4.5 21.5 9 12 13.5 2.5 9zM6.5 11.5V16c0 1.4 2.5 2.7 5.5 2.7s5.5-1.3 5.5-2.7v-4.5"/></symbol>
+      <symbol id="i-apps" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM15.5 13v7M13 16.5h7"/></symbol>
+      <symbol id="i-flow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 5h5v5H5zM14 14h5v5h-5zM10 7.5h4.5a2 2 0 0 1 2 2V14"/></symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 20h16M7 20v-7M12 20V6M17 20v-10"/></symbol>
+      <symbol id="i-db" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4.5 6c0-1.4 3.4-2.5 7.5-2.5s7.5 1.1 7.5 2.5-3.4 2.5-7.5 2.5S4.5 7.4 4.5 6zM4.5 6v6c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5V6M4.5 12v6c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5v-6"/></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M8.5 7 3.5 12l5 5M15.5 7l5 5-5 5M13.5 5l-3 14"/></symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 3.5 3 8.5l9 5 9-5-9-5zM3 12.5l9 5 9-5M3 16.5l9 5 9-5"/></symbol>
+      <symbol id="i-plug" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M9 3v5M15 3v5M6.5 8h11v3.5a5.5 5.5 0 0 1-11 0zM12 17v4"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 5.5h16v10.5H9.5L5.5 19.5V16H4z"/></symbol>
+      <symbol id="i-folder" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3.5 6.5h6l2 2.5h9v9.5h-17z"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+
+  <!-- ============ NAVIGATION (floating pill) ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="nav-pill">
+      <a class="nav-avatar" href="#home" data-nav aria-label="Home — Muhammad Talha">
+        <img data-profile src="assets/profile.jpg" alt="" width="32" height="32">
+        <span class="avatar-mono" aria-hidden="true">MT</span>
+      </a>
+
+      <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+        <ul>
+          <li><a href="#about" data-nav>About</a></li>
+          <li><a href="#experience" data-nav>Experience</a></li>
+          <li><a href="#platform" data-nav>Platform</a></li>
+          <li><a href="#projects" data-nav>Projects</a></li>
+          <li><a href="#skills" data-nav>Skills</a></li>
+          <li><a href="#education" data-nav>Education</a></li>
+          <li class="nav-cta-item"><a class="nav-cta" href="#contact" data-nav>Let's talk</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Open menu">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-bg" id="heroDecor" aria-hidden="true"><!-- ribbons + wireframe shapes are drawn by script.js --></div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="status-pill hero-in" style="--d:0ms"><span class="pill-dot" aria-hidden="true"></span> Microsoft Dynamics 365 CRM &amp; Power Platform Developer</p>
+          <h1 id="hero-title" class="hero-title hero-in" style="--d:80ms"><span class="t-first">Muhammad</span> <span class="t-last">Talha</span></h1>
+
+          <!-- The highlighted phrase rotates through CONFIG.heroPhrases -->
+          <p class="hero-tag hero-in" style="--d:160ms">
+            I build business apps with <span class="rotator" id="rotator" aria-hidden="true">Canvas Apps</span><span class="sr-only">Canvas Apps, Model-driven Apps, Power Automate flows and Dataverse</span>
+          </p>
+          <!-- EDIT: hero introduction -->
+          <p class="hero-lead hero-in" style="--d:240ms">
+            I build business applications, automate workflows and customize CRM solutions on the
+            Microsoft Power Platform — turning manual, approval-heavy processes into structured
+            apps and flows on top of Dataverse, with Teams, Outlook and Power BI around them.
+          </p>
+
+          <div class="hero-actions hero-in" style="--d:320ms">
+            <a class="btn btn-dark" href="#projects">View Projects <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+            <a class="btn btn-light" data-resume href="assets/Muhammad-Talha-Resume.pdf" download><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Download Resume</a>
+            <a class="btn btn-light" href="#contact">Contact Me</a>
+          </div>
+
+          <ul class="hero-meta hero-in" style="--d:400ms" aria-label="At a glance">
+            <!-- EDIT: chips shown under the hero buttons -->
+            <li><i class="dot dot-teal" aria-hidden="true"></i><span data-config="location">Lahore, Pakistan</span></li>
+            <li><i class="dot dot-purple" aria-hidden="true"></i>Studying CS · 5th semester</li>
+            <li><i class="dot dot-green" aria-hidden="true"></i>Power Platform &amp; D365</li>
+          </ul>
+
+          <ul class="hero-social hero-in" style="--d:460ms" aria-label="Social profiles">
+            <li><a class="social-link" data-social="github" href="#" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg><span>GitHub</span></a></li>
+            <li><a class="social-link" data-social="linkedin" href="#" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg><span>LinkedIn</span></a></li>
+          </ul>
+        </div>
+
+        <div class="hero-visual hero-in" style="--d:280ms">
+          <div class="orbit">
+            <span class="orbit-glow" aria-hidden="true"></span>
+            <svg class="orbit-lines" viewBox="0 0 520 520" aria-hidden="true">
+              <defs>
+                <linearGradient id="orbG1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#6366f1"/></linearGradient>
+                <linearGradient id="orbG2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14b8a6"/><stop offset="1" stop-color="#22c55e"/></linearGradient>
+              </defs>
+              <g transform="rotate(-14 260 260)">
+                <ellipse cx="260" cy="260" rx="232" ry="118" fill="none" stroke="url(#orbG1)" stroke-width="2.2"/>
+                <circle class="orbit-dot od-1" r="8" cx="0" cy="0" fill="#8b5cf6"/>
+              </g>
+              <g transform="rotate(16 260 260)">
+                <ellipse cx="260" cy="260" rx="118" ry="236" fill="none" stroke="url(#orbG2)" stroke-width="1.8"/>
+                <circle class="orbit-dot od-2" r="7" cx="0" cy="0" fill="#14b8a6"/>
+              </g>
+              <circle cx="260" cy="260" r="188" fill="none" stroke="rgba(109,40,217,.12)" stroke-width="1"/>
+            </svg>
+
+            <div class="portrait">
+              <!-- EDIT: add your photo at assets/profile.jpg (square, 600px+). A monogram shows until then. -->
+              <img data-profile id="profileImg" src="assets/profile.jpg" alt="Portrait of Muhammad Talha" width="240" height="240" decoding="async">
+              <span class="portrait-fallback" aria-hidden="true">MT</span>
+            </div>
+
+            <ul class="orbit-chips" aria-label="Core technologies">
+              <li class="oc oc-1"><b style="--c:#7c3aed">365</b>Dynamics 365</li>
+              <li class="oc oc-2"><b style="--c:#4f46e5">PA</b>Power Apps</li>
+              <li class="oc oc-3"><b style="--c:#2563eb">AU</b>Power Automate</li>
+              <li class="oc oc-4"><b style="--c:#0f766e">DV</b>Dataverse</li>
+              <li class="oc oc-5"><b style="--c:#c2410c">BI</b>Power BI</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TECH TICKER (decorative) ============ -->
+    <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marqueeTrack"><!-- filled by script.js (CONFIG.marquee) --></div></div>
+
+    <!-- ============ 01 ABOUT ============ -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow"><span class="idx">01</span> About</p>
+            <h2 id="about-title" class="section-title">Business apps that fit how people already work</h2>
+          </div>
+          <!-- EDIT: about intro (based on your resume summary) -->
+          <p class="section-sub">Hands-on Power Platform development — apps, approvals, data models and reporting — built around real business processes.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="card about-text reveal">
+            <p class="lead">
+              I'm a <strong>Power Platform developer</strong> who enjoys turning real processes — leave requests,
+              approvals, sales pipelines, document handling — into reliable apps and automated flows.
+            </p>
+            <p>
+              My work covers <strong>Canvas Apps</strong> and <strong>Model-driven Apps</strong>,
+              <strong>Power Automate</strong> cloud and scheduled flows, <strong>Power BI</strong> dashboards and
+              secure <strong>Dataverse</strong> data models — including tables, relationships, security roles
+              and Business Process Flows.
+            </p>
+            <p>
+              I'm especially interested in <strong>Dynamics 365 CRM customization</strong>: shaping forms,
+              views and dashboards, and extending them with Business Rules, JavaScript and C# plugins where
+              the standard tools run out.
+            </p>
+          </div>
+
+          <!-- EDIT: stat tiles. Keep only figures you can stand behind. -->
+          <div class="stat-col">
+            <div class="card stat reveal">
+              <span class="stat-num">2025</span>
+              <div><span class="stat-kicker">Since</span><span class="stat-label">Hands-on Power Platform work — now full-time at Numrex</span></div>
+            </div>
+            <div class="card stat reveal">
+              <span class="stat-num">3</span>
+              <div><span class="stat-kicker">Resume projects</span><span class="stat-label">Canvas, Model-driven apps &amp; automation</span></div>
+            </div>
+          </div>
+
+          <article class="card card-dark reveal">
+            <h3>Always learning</h3>
+            <p>Studying Computer Science (5th semester) alongside hands-on Power Platform work.</p>
+            <ul class="avatars" aria-label="Areas I'm building depth in">
+              <li style="--c:#7c3aed">C#</li><li style="--c:#2563eb">JS</li><li style="--c:#0f766e">SQL</li><li style="--c:#c2410c">fx</li><li style="--c:#be185d">BI</li>
+            </ul>
+          </article>
+
+          <article class="card card-flow reveal">
+            <h3>How I deliver</h3>
+            <ol class="flow">
+              <li><span class="fc fc-purple">Requirements</span></li><li class="flow-arrow" aria-hidden="true">→</li>
+              <li><span class="fc fc-violet">Dataverse model</span></li><li class="flow-arrow" aria-hidden="true">→</li>
+              <li><span class="fc fc-teal">Apps &amp; forms</span></li><li class="flow-arrow" aria-hidden="true">→</li>
+              <li><span class="fc fc-orange">Flows &amp; rules</span></li><li class="flow-arrow" aria-hidden="true">→</li>
+              <li><span class="fc fc-green">Dashboards</span></li>
+            </ol>
+          </article>
+
+          <!-- EDIT: journey card (Numrex start date is still a placeholder) -->
+          <article class="card card-journey reveal">
+            <div class="journey-copy">
+              <p class="mini-eyebrow"><span aria-hidden="true">✦</span> Career so far</p>
+              <h3>From GreenX to a full-time role at Numrex</h3>
+              <p>Power Platform Developer at GreenX Consultants from 2025, delivering apps, approvals and dashboards — and now working full-time at Numrex, where I started as an intern, building Canvas Apps and Power Automate flows on Dataverse.</p>
+              <ul class="tags">
+                <li class="tag tag-purple">Canvas Apps</li><li class="tag tag-green">Model-driven</li><li class="tag tag-blue">Power Automate</li><li class="tag tag-orange">Dataverse</li>
+              </ul>
+            </div>
+            <figure class="journey-map" aria-label="GreenX Consultants in 2025, then full-time at Numrex">
+              <svg viewBox="0 0 420 190" aria-hidden="true">
+                <path class="jm-arc" d="M60 140 C 140 30, 280 20, 350 90"/>
+                <circle cx="60" cy="140" r="11" fill="#fff" stroke="#7c3aed" stroke-width="3"/><circle cx="60" cy="140" r="4.5" fill="#7c3aed"/>
+                <circle cx="350" cy="90" r="11" fill="#fff" stroke="#16a34a" stroke-width="3"/><circle cx="350" cy="90" r="4.5" fill="#16a34a"/>
+              </svg>
+              <span class="jm-label jm-left"><b>GreenX Consultants</b><small>2025</small></span>
+              <span class="jm-label jm-right"><b>Numrex</b><small>Full-time · now</small></span>
+            </figure>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 02 EXPERIENCE (dark band, like the reference's career section) ============ -->
+    <section class="section career" id="experience" aria-labelledby="exp-title">
+      <div class="career-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow"><span class="idx">02</span> Experience</p>
+            <h2 id="exp-title" class="section-title">Where I've worked</h2>
+          </div>
+          <p class="section-sub">Roles as listed on my resume. On small screens the timeline scrolls sideways.</p>
+        </div>
+        <ol class="career-track" id="timeline" tabindex="0" aria-label="Experience timeline"><!-- rendered by script.js (CONFIG.experience) --></ol>
+        <p class="career-hint" aria-hidden="true">Swipe to move along the timeline →</p>
+        <noscript><p class="noscript">Enable JavaScript to see the experience timeline, or download the resume.</p></noscript>
+      </div>
+    </section>
+
+    <!-- ============ 03 PLATFORM ============ -->
+    <section class="section" id="platform" aria-labelledby="platform-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow"><span class="idx">03</span> Power Platform</p>
+            <h2 id="platform-title" class="section-title">The layer that connects apps, flows and reports</h2>
+          </div>
+          <p class="section-sub">Hover or focus a service to trace its path to Dataverse.</p>
+        </div>
+        <div class="platform reveal" id="platform-map"><!-- rendered by script.js (CONFIG.platform) --></div>
+      </div>
+    </section>
+
+    <!-- ============ 04 PROJECTS ============ -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow"><span class="idx">04</span> Selected work</p>
+            <h2 id="projects-title" class="section-title">Projects I've worked on</h2>
+          </div>
+          <p class="section-sub">The three projects from my resume stack up below. Concepts follow after them and are clearly marked.</p>
+        </div>
+
+        <div class="work-stack" id="workStack"><!-- featured projects, rendered by script.js --></div>
+
+        <div class="concepts" id="conceptsWrap" hidden>
+          <div class="section-head reveal">
+            <div><h3 class="sub-title">Concepts &amp; upcoming</h3></div>
+            <p class="section-sub">Planned project ideas. Details are filled in once each implementation is confirmed — these are <strong>not</strong> presented as completed work.</p>
+          </div>
+          <div class="project-grid" id="conceptGrid"></div>
+        </div>
+        <noscript><p class="noscript">Enable JavaScript to browse the project gallery.</p></noscript>
+      </div>
+    </section>
+
+    <!-- ============ 05 SKILLS ============ -->
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow"><span class="idx">05</span> Toolkit</p>
+            <h2 id="skills-title" class="section-title">Skills &amp; technologies</h2>
+          </div>
+          <p class="section-sub">Grouped by what I use them for — no arbitrary percentages.</p>
+        </div>
+
+        <!-- EDIT: add/remove <li> items inside any card to change skills -->
+        <div class="skills-grid">
+          <article class="card sk reveal">
+            <header><span class="skill-icon" style="--c:#7c3aed"><svg class="icon" aria-hidden="true"><use href="#i-apps"/></svg></span><h3>Microsoft Power Platform</h3></header>
+            <ul class="chips">
+              <li>Power Apps · Canvas</li><li>Power Apps · Model-driven</li><li>Power Automate</li>
+              <li>Cloud flows</li><li>Scheduled flows</li><li>Instant flows</li><li>Power BI</li><li>Power Pages</li>
+            </ul>
+          </article>
+          <article class="card sk reveal">
+            <header><span class="skill-icon" style="--c:#2563eb"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></span><h3>Dynamics 365 CRM</h3></header>
+            <ul class="chips">
+              <li>Model-driven Apps</li><li>CRM customization</li><li>Forms, views &amp; dashboards</li>
+              <li>Business Rules</li><li>Business Process Flows</li>
+            </ul>
+          </article>
+          <article class="card sk reveal">
+            <header><span class="skill-icon" style="--c:#0f766e"><svg class="icon" aria-hidden="true"><use href="#i-db"/></svg></span><h3>Dataverse &amp; data</h3></header>
+            <ul class="chips">
+              <li>Dataverse</li><li>Data modeling</li><li>Table relationships</li><li>Security roles</li><li>SQL</li>
+            </ul>
+          </article>
+          <article class="card sk reveal">
+            <header><span class="skill-icon" style="--c:#c2410c"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></span><h3>Development</h3></header>
+            <ul class="chips">
+              <li>C#</li><li>.NET</li><li>JavaScript</li><li>Dynamics 365 plugins</li><li>REST APIs</li><li>Custom connectors</li>
+            </ul>
+          </article>
+          <article class="card sk reveal">
+            <header><span class="skill-icon" style="--c:#be185d"><svg class="icon" aria-hidden="true"><use href="#i-flow"/></svg></span><h3>Power Fx &amp; practices</h3></header>
+            <ul class="chips">
+              <li>Patch</li><li>Filter</li><li>LookUp</li><li>ClearCollect</li><li>ForAll</li><li>Concurrent</li>
+              <li>SubmitForm</li><li>Navigate</li><li>Defaults()</li>
+              <li>Form customization</li><li>Workflow automation</li><li>Application lifecycle concepts</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 06 EDUCATION ============ -->
+    <section class="section section-flush" id="education" aria-labelledby="edu-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow"><span class="idx">06</span> Education</p>
+            <h2 id="edu-title" class="section-title">Currently studying</h2>
+          </div>
+          <p class="section-sub">Not yet graduated — learning alongside hands-on project work.</p>
+        </div>
+        <div class="edu-wrap" id="eduWrap"><!-- rendered by script.js (CONFIG.education) --></div>
+      </div>
+    </section>
+
+    <!-- ============ 07 CONTACT ============ -->
+    <section class="section section-flush" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-panel reveal">
+          <span class="contact-glow" aria-hidden="true"></span>
+          <div class="contact-grid">
+            <div>
+              <p class="eyebrow"><span class="idx">07</span> Contact</p>
+              <h2 id="contact-title" class="section-title contact-title">Let's build your next business app.</h2>
+              <p class="lead">
+                Power Apps, Power Automate workflows, Dataverse data models, Power BI dashboards or
+                Dynamics 365 customization — send me a message and tell me what you need.
+              </p>
+              <div class="hero-actions">
+                <a class="btn btn-accent" data-mailto href="#"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> Email Me</a>
+                <a class="btn btn-glass" data-resume href="assets/Muhammad-Talha-Resume.pdf" download><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Download Resume</a>
+              </div>
+            </div>
+
+            <ul class="contact-list">
+              <li>
+                <span class="c-ico"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>
+                <div>
+                  <span class="c-label">Email</span>
+                  <a class="c-value" data-mailto data-config-text="email" href="#">—</a>
+                </div>
+                <button class="icon-btn" type="button" id="copyEmail" aria-label="Copy email address"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg></button>
+              </li>
+              <li>
+                <span class="c-ico"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></span>
+                <div>
+                  <span class="c-label">LinkedIn</span>
+                  <a class="c-value" data-social="linkedin" href="#" target="_blank" rel="noopener noreferrer"><span data-social-text="linkedin">LinkedIn</span></a>
+                </div>
+              </li>
+              <li>
+                <span class="c-ico"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></span>
+                <div>
+                  <span class="c-label">GitHub</span>
+                  <a class="c-value" data-social="github" href="#" target="_blank" rel="noopener noreferrer"><span data-social-text="github">GitHub</span></a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-name">Muhammad Talha</p>
+        <p class="footer-role">Microsoft Dynamics 365 CRM &amp; Power Platform Developer</p>
+        <p class="footer-copy">© <span id="year">2026</span> Muhammad Talha · Dynamics 365 · Power Platform · Dataverse</p>
+      </div>
+      <ul class="footer-social" aria-label="Social links">
+        <li><a class="icon-link" data-social="github" href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+        <li><a class="icon-link" data-social="linkedin" href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+        <li><a class="icon-link" data-mailto href="#" aria-label="Email"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a></li>
+        <li><button class="icon-btn" type="button" id="footerTop" aria-label="Back to top"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg></button></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg></button>
+
+  <!-- ============ PROJECT DETAIL MODAL ============ -->
+  <dialog class="modal" id="projectModal" aria-labelledby="modalTitle">
+    <div class="modal-shell">
+      <button class="modal-close" type="button" id="modalClose" aria-label="Close project details"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+      <div class="modal-body" id="modalBody"><!-- filled by script.js --></div>
+    </div>
+  </dialog>
+
+</body>
+</html>
